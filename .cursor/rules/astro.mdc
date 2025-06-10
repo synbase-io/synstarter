@@ -1,0 +1,96 @@
+---
+description: Use Astro v5 and server islands.
+globs: *.astro
+alwaysApply: true
+---
+You are an expert of the Astro framework for scalable web development.
+
+# Key Principles
+
+- Always use the latest version of Astro and its [documentation](mdc:https:/docs.astro.build)
+- Prioritize static generation and minimal JavaScript for optimal performance.
+- Use descriptive variable names and follow Astro's naming conventions.
+- Organize files using Astro's file-based routing system.
+
+# Mark Frontmatter the correct way
+
+An Astro component defines the server-scoped code within the Frontmatter of the components content.
+
+```astro
+---
+const example = "Hey there";
+---
+
+<p>{example}</>
+```
+
+The Frontmatter of an Astro component lives within the two "---" lines.
+
+# Astro Project Structure
+
+The project structure follows a modular approach. Every module exposes features and may extend Astro's locals object.
+
+# Component Development
+
+- Add components to the respective module (eg. a component called "BlogArticle" is expected at `src/blog/components/BlogArticle.astro`)
+- Use React components for more advanced dynamic components
+- Extend the Props of an astro component by the component's root element's attributes. Example: ```interface Props extends HTMLAttributes<"div"> { ... }```
+- Extend the Props of a react component by the component's root element's attributes. Example: ```interface Props extends ComponentProps<"div"> { ... }```
+
+## Building Forms
+
+Use React to build forms. Use the `useActionForm` hook in `/src/actions/hooks`
+
+# Routing and Pages
+
+- Use the [RootLayout](/src/ui/components/RootLayout.astro) on each page.
+- Utilize Astro's file-based routing system in the src/pages/ directory.
+- Implement dynamic routes using [...slug].astro syntax.
+- Use server islands for components using data from the database.
+
+# Performance Optimization
+
+- Minimize use of client-side JavaScript; leverage Astro's static generation.
+- Use the client:\* directives judiciously for partial hydration:
+    - client:load for immediately needed interactivity
+    - client:idle for non-critical interactivity
+    - client:visible for components that should hydrate when visible
+- Implement proper lazy loading for images and other assets.
+- Utilize Astro's built-in asset optimization features.
+
+# Data Fetching
+
+- Use Astro.props for passing data to components.
+- Use the [database client](/src/db) to interact with the database.
+- Implement proper error handling for data fetching operations.
+
+# SEO and Meta Tags
+
+- Use the `head` slot to set the pages `<title>` and `<meta content="..." name="description" />`.
+
+# Integrations and Plugins
+
+- Utilize Astro integrations for extending functionality (e.g., @astrojs/image).
+- Implement proper configuration for integrations in [astro.config.mjs](mdc:astro.config.mjs).
+- Use Astro's official integrations when available for better compatibility.
+
+# Accessibility
+
+- Ensure proper semantic HTML structure in Astro components.
+- Implement ARIA attributes where necessary.
+- Ensure keyboard navigation support for interactive elements.
+
+# Key Conventions
+
+1. Follow Astro's Style Guide for consistent code formatting.
+2. Use TypeScript for enhanced type safety and developer experience.
+3. Implement proper error handling and logging.
+4. Use Astro's Image component for optimized image delivery.
+
+# Performance Metrics
+
+- Prioritize Core Web Vitals (LCP, FID, CLS) in development.
+- Use Lighthouse and WebPageTest for performance auditing.
+- Implement performance budgets and monitoring.
+
+Refer to Astro's official documentation for detailed information on components, routing, and integrations for best practices. Make sure you are using the latest version of Astro's documentation.

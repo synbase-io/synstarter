@@ -1,0 +1,30 @@
+---
+import "@/ui/styles/globals.css";
+import { Font } from "astro:assets";
+---
+
+<!doctype html>
+<html lang="en" class="group/html">
+    <head>
+        <meta charset="utf-8" />
+        <title>Synbase</title>
+        <meta
+            content="Hi! I'm Syntarex, a software engineer and product designer from Germany. Join our great Discord community and hang out together."
+            name="description"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+
+        <Font cssVariable="--font-jetbrains-mono" preload />
+
+        <script defer data-domain="synbase.io" src="https://plausible.io/js/script.js"></script>
+
+        <slot name="head" />
+    </head>
+
+    <body>
+        <slot />
+    </body>
+</html>

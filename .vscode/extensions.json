@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "astro-build.astro-vscode",
+        "wiggin77.codedox",
+        "unifiedjs.vscode-mdx"
+    ],
+    "unwantedRecommendations": []
+}

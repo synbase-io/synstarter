@@ -1,0 +1,39 @@
+{
+    "npm.packageManager": "pnpm",
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+    "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "git.inputValidation": true,
+    "git.inputValidationLength": 72,
+    "git.inputValidationSubjectLength": 50,
+    "files.eol": "\n",
+    "files.encoding": "utf8",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[mdx]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "never"
+        }
+    },
+    "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list"]
+}

@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "command": "pnpm dev",
+            "name": "Astro Dev Server",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "pnpm prebuild",
+            "name": "pnpm prebuild (apply database migrations)",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "pnpm clean",
+            "name": "pnpm clean",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "command": "pnpm build",
+            "name": "pnpm build",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}
