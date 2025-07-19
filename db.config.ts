@@ -9,12 +9,16 @@ import type { Config } from "drizzle-kit";
 const DB_URL = process.env.TURSO_DB_URL;
 const DB_AUTH_TOKEN = process.env.TURSO_DB_AUTH_TOKEN;
 
+if (!DB_URL) {
+    throw new Error("Environment variable 'DB_URL' is missing.");
+}
+
 export default {
-  schema: "./src/db/db.schema.ts",
-  out: "./src/db/migrations",
-  dialect: "turso",
-  dbCredentials: {
-    url: DB_URL,
-    authToken: DB_AUTH_TOKEN,
-  },
+    schema: "./src/db/db.schema.ts",
+    out: "./src/db/migrations",
+    dialect: "turso",
+    dbCredentials: {
+        url: DB_URL,
+        authToken: DB_AUTH_TOKEN,
+    },
 } satisfies Config;
