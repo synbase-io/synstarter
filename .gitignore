@@ -28,3 +28,5 @@ cli-deploy.zip
 
 # local embedded replica of database
 dev.db*
+
+.cursor/mcp.json
