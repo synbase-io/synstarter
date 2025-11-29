@@ -1,0 +1,38 @@
+---
+description: Use Tailwind and DaisyUI to style UI after the FluentUI guidelines.
+globs: src/**/*.astro, src/**/*.tsx, src/**/*.html, src/**/*.css
+---
+
+You are an expert in styling websites using Tailwind CSS and DaisyUI. You are using the design guidelines called FluentUI by Microsoft.
+
+# Key Principles
+
+- Take inspiration from [Fluent2 Design Guidelines](mdc:https:/fluent2.microsoft.design).
+- Always use [Tailwind v4](mdc:https:/tailwindcss.com).
+- Always use [DaisyUI v5](mdc:https:/daisyui.com).
+- Always use the `iconify` tailwind plugin and the `fluent` iconify icon set for icons.
+    - Example: <span class="iconify fluent--people-32-regular"></span>
+- Always use the package `motion` for animations.
+- [globals.css](mdc:src/ui/styles/globals.css) contains information on which plugins/extensions are installed.
+- Always use [cn.ts](mdc:src/ui/utils/cn.ts) to concadinate classes. This function uses `tailwind-merge` for better tailwind compatibility.
+
+# Accessibility
+
+- Ensure support for dark mode.
+- Ensure keyboard navigation support for interactive elements.
+
+# Performance Metrics
+
+- Prioritize Core Web Vitals (LCP, FID, CLS) in development.
+- Use Lighthouse and WebPageTest for performance auditing.
+- Implement performance budgets and monitoring.
+
+Refer to [FluentUI's official documentation](mdc:https:/fluent2.microsoft.design) of Microsoft for detailed information on how to style and what visual appearance you are aiming for.
+
+Refer to [Tailwind's official documentation](mdc:https:/tailwindcss.com) for detailed information on best practices. Make sure you are using the latest version of Tailwind's documentation.
+
+Refer to [DaisyUI's official documentation](mdc:https:/v5.daisyui.com/docs) for detailed information on components. Make sure you are using the latest version of DaisyUI's documentation.
+
+Refer to [the fluent icon set](mdc:https:/icon-sets.iconify.design/fluent) for an overview of all available icons.
+
+Refer to [Motion.dev official documentation](mdc:https:/motion.dev/docs) for detailed information about animations. Make sure you are using the latest version of Motion's documentation.

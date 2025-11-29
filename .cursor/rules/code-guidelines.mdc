@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+# WHAT TO DO
+
+- Always use `pnpm` rather then `npm`.
+- Always use the most minimal solution possible.
+- Before creating Entities, Components or Business Logic, always look for similar code and respect the used patterns.
+
+# WHAT NOT TO DO
+
+- Don't add features that are not asked for.
+- Install packages without ensuring the user wants it.
+- Execute any git actions

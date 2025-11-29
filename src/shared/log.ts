@@ -1,6 +1,5 @@
 import type { AstroIntegrationLogger } from "astro";
 import chalk from "chalk";
-import { format } from "util";
 
 /**
  * Logs a debug message using the Astro integration logger.
@@ -10,7 +9,7 @@ import { format } from "util";
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function log(logger: AstroIntegrationLogger, ...args: any[]): void {
-    logger.info(chalk.gray(format(...args)));
+    logger.info(chalk.gray(args.join(" ")));
 }
 
 /**
@@ -21,7 +20,7 @@ export function log(logger: AstroIntegrationLogger, ...args: any[]): void {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function info(logger: AstroIntegrationLogger, ...args: any[]): void {
-    logger.info(format(...args));
+    logger.info(args.join(" "));
 }
 
 /**
@@ -32,7 +31,7 @@ export function info(logger: AstroIntegrationLogger, ...args: any[]): void {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function fail(logger: AstroIntegrationLogger, ...args: any[]): void {
-    logger.error(chalk.red(format(...args)));
+    logger.error(chalk.red(args.join(" ")));
 }
 
 /**
@@ -43,7 +42,7 @@ export function fail(logger: AstroIntegrationLogger, ...args: any[]): void {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function warn(logger: AstroIntegrationLogger, ...args: any[]): void {
-    logger.warn(chalk.yellow(format(...args)));
+    logger.warn(chalk.yellow(args.join(" ")));
 }
 
 /**
@@ -54,5 +53,5 @@ export function warn(logger: AstroIntegrationLogger, ...args: any[]): void {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function success(logger: AstroIntegrationLogger, ...args: any[]): void {
-    logger.info(chalk.green(format(...args)));
+    logger.info(chalk.green(args.join(" ")));
 }

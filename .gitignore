@@ -27,10 +27,16 @@ pnpm-debug.log*
 .idea/
 
 # local ziped project for manual deployment
-cli-deploy.zip
+deploy.zip
 
 # local embedded replica of database
 dev.db*
 
+# local SSL certificates (generated with mkcert)
+.certs/
+
 # your ai api keys
 .cursor/mcp.json
+
+# plans created by cursor
+.cursor/plans/

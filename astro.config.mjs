@@ -7,12 +7,15 @@ import tailwindcss from "@tailwindcss/vite";
 import https from "@vitejs/plugin-basic-ssl";
 import favicon from "astro-favicons";
 import { defineConfig, fontProviders } from "astro/config";
+import { getHttpsConfig } from "./ssl.config.ts";
 
-const siteUrl = process.env.SITE_URL ?? "https://localhost:4321";
+const site = process.env.SITE_URL ? `https://${process.env.SITE_URL}` : "https://localhost:4321";
+
+const httpsConfig = getHttpsConfig();
 
 /** @type {import('astro').AstroConfig} */
 export default defineConfig({
-    site: siteUrl,
+    site,
     adapter: node({ mode: "standalone" }),
     integrations: [
         react({
@@ -43,28 +46,40 @@ export default defineConfig({
                 access: "secret",
                 type: "string",
             },
-            TURSO_DB_URL: {
+            DB_URL: {
                 context: "server",
                 access: "secret",
                 type: "string",
             },
-            TURSO_DB_AUTH_TOKEN: {
+            DB_AUTH_TOKEN: {
                 context: "server",
                 access: "secret",
                 type: "string",
+            },
+            DB_REPLICA_PATH: {
+                context: "server",
+                access: "secret",
+                type: "string",
+                optional: true,
+            },
+            DB_REPLICA_SYNC_INTERVAL: {
+                context: "server",
+                access: "secret",
+                type: "number",
+                optional: true,
             },
             SITE_URL: {
                 context: "server",
                 access: "public",
                 type: "string",
-                default: siteUrl,
+                default: site,
             },
         },
     },
     vite: {
-        plugins: [https(), tailwindcss()],
+        plugins: [...(import.meta.env.DEV && !httpsConfig ? [https()] : []), tailwindcss()],
         server: {
-            https: import.meta.env.DEV,
+            https: httpsConfig,
         },
     },
 });

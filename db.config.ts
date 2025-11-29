@@ -6,11 +6,12 @@ import type { Config } from "drizzle-kit";
  * Use it to run migrations or generate type definitions.
  */
 
-const DB_URL = process.env.TURSO_DB_URL;
-const DB_AUTH_TOKEN = process.env.TURSO_DB_AUTH_TOKEN;
+const DB_URL = process.env.DB_URL;
+const DB_AUTH_TOKEN = process.env.DB_AUTH_TOKEN;
 
 if (!DB_URL) {
-    throw new Error("Environment variable 'DB_URL' is missing.");
+    console.error("Environment variable 'DB_URL' is missing.");
+    process.exit(1);
 }
 
 export default {

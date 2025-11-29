@@ -2,7 +2,9 @@ import { sql } from "drizzle-orm";
 import { text } from "drizzle-orm/sqlite-core";
 
 const timestampColumns = {
-    createdAt: text().default(sql`(CURRENT_TIMESTAMP)`),
+    createdAt: text()
+        .notNull()
+        .default(sql`(CURRENT_TIMESTAMP)`),
     updatedAt: text()
         .notNull()
         .default(sql`(CURRENT_TIMESTAMP)`)

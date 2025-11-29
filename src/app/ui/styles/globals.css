@@ -6,6 +6,12 @@
 }
 
 @plugin "daisyui" {
+    /*
+        Disabling `properties` prevents a warning from being thrown.
+        If you need to use properties, you can just delete this line.
+        See: https://daisyui.com/docs/base
+    */
+    exclude: properties;
     logs: false;
 }
 
@@ -91,13 +97,6 @@
 
 @theme {
     --font-primary: var(--font-jetbrains-mono);
-}
-
-/** Container utility **/
-@utility container {
-    margin-inline: auto;
-    padding-inline: 1rem;
-    @apply px-[1rem] sm:px-[1rem] md:px-[2rem] lg:px-[3rem] xl:px-[4rem] 2xl:px-[6rem];
 }
 
 html {
