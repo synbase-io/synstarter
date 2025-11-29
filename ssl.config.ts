@@ -28,7 +28,7 @@ export function getHttpsConfig(
     console.warn(
         "⚠️  Local certificates not found. Using basic SSL plugin.\n" +
             "   To enable trusted certificates for Cursor's browser, run:\n" +
-            `   mkcert -key-file ${keyPath} -cert-file ${certPath} localhost 127.0.0.1 ::1`,
+            `   mkdir .certs && mkcert -key-file ${keyPath} -cert-file ${certPath} localhost 127.0.0.1 ::1`,
     );
 
     return null;
